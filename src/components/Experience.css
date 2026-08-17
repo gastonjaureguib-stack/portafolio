@@ -1,0 +1,23 @@
+.experience-list {
+  border-left: 1px solid var(--border);
+}
+
+.experience-item {
+  display: flex;
+  gap: 25px;
+  padding: 25px;
+  border-bottom: 1px solid var(--border);
+  font-family: 'Fira Code', monospace;
+}
+
+.experience-item:hover {
+  background: var(--surface);
+}
+
+.line-number {
+  color: #484f58;
+}
+
+.experience-item p {
+  margin: 5px 0;
+}

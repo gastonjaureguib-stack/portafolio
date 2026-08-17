@@ -1,0 +1,485 @@
+/* =========================================================
+   EDUCATION
+========================================================= */
+
+.education-block {
+  margin-bottom: 70px;
+}
+
+.education-code-title,
+.education-code-close {
+  font-family: 'Fira Code', monospace;
+  font-size: 0.95rem;
+}
+
+.education-code-title {
+  margin-bottom: 22px;
+}
+
+.education-code-close {
+  margin-top: 20px;
+}
+
+
+/* =========================================================
+   GRID DE DIPLOMAS
+========================================================= */
+
+.diplomas-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+
+/* =========================================================
+   CARD DIPLOMA
+========================================================= */
+
+.diploma-card {
+  min-width: 0;
+
+  background: var(--surface);
+
+  border: 1px solid var(--border);
+  border-radius: 14px;
+
+  overflow: hidden;
+
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.diploma-card:hover {
+  transform: translateY(-5px);
+
+  border-color: rgba(152, 195, 121, 0.5);
+
+  box-shadow:
+    0 15px 40px rgba(0, 0, 0, 0.2);
+}
+
+
+/* =========================================================
+   IMAGEN DEL DIPLOMA
+========================================================= */
+
+.diploma-image-container {
+  position: relative;
+
+  width: 100%;
+  aspect-ratio: 16 / 10;
+
+  overflow: hidden;
+
+  background: var(--bg);
+
+  cursor: pointer;
+}
+
+.diploma-image {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  transition:
+    transform 0.35s ease,
+    opacity 0.35s ease;
+}
+
+.diploma-image-container:hover .diploma-image {
+  transform: scale(1.03);
+  opacity: 0.6;
+}
+
+
+/* =========================================================
+   VER DIPLOMA
+========================================================= */
+
+.diploma-overlay {
+  position: absolute;
+
+  inset: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  opacity: 0;
+
+  background: rgba(13, 17, 23, 0.2);
+
+  transition:
+    opacity 0.25s ease,
+    background 0.25s ease;
+}
+
+.diploma-overlay span {
+  padding: 9px 15px;
+
+  background: var(--bg);
+
+  border: 1px solid var(--green);
+  border-radius: 7px;
+
+  font-family: 'Fira Code', monospace;
+  font-size: 0.8rem;
+
+  color: var(--green);
+}
+
+.diploma-image-container:hover .diploma-overlay {
+  opacity: 1;
+
+  background: rgba(13, 17, 23, 0.35);
+}
+
+
+/* =========================================================
+   INFORMACIÓN DEL DIPLOMA
+========================================================= */
+
+.diploma-info {
+  padding: 20px;
+
+  font-family: 'Fira Code', monospace;
+  font-size: 0.8rem;
+}
+
+.diploma-info p {
+  margin: 6px 0;
+
+  overflow-wrap: anywhere;
+}
+
+
+/* =========================================================
+   OTRA FORMACIÓN
+========================================================= */
+
+.other-education {
+  margin-top: 20px;
+}
+
+.other-education-list {
+  background: var(--surface);
+
+  border: 1px solid var(--border);
+  border-radius: 12px;
+
+  padding: 25px;
+
+  font-family: 'Fira Code', monospace;
+  font-size: 0.82rem;
+}
+
+.other-education-item {
+  padding: 13px 0;
+
+  border-bottom: 1px solid var(--border);
+
+  line-height: 1.8;
+
+  overflow-wrap: anywhere;
+}
+
+.other-education-item:last-child {
+  border-bottom: none;
+}
+
+
+/* =========================================================
+   MODAL DEL DIPLOMA
+========================================================= */
+
+.diploma-modal {
+  position: fixed;
+
+  inset: 0;
+
+  z-index: 5000;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 30px;
+
+  background: rgba(5, 8, 12, 0.92);
+
+  backdrop-filter: blur(12px);
+}
+
+
+/* =========================================================
+   CONTENIDO DEL MODAL
+========================================================= */
+
+.diploma-modal-content {
+  width: min(1000px, 100%);
+
+  max-height: 90vh;
+
+  background: var(--surface);
+
+  border: 1px solid var(--border);
+  border-radius: 14px;
+
+  overflow: auto;
+
+  box-shadow:
+    0 30px 80px rgba(0, 0, 0, 0.5);
+
+  animation: diplomaOpen 0.25s ease;
+}
+
+@keyframes diplomaOpen {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+
+/* =========================================================
+   HEADER DEL MODAL
+========================================================= */
+
+.diploma-modal-header {
+  padding: 18px 22px;
+
+  border-bottom: 1px solid var(--border);
+
+  font-family: 'Fira Code', monospace;
+  font-size: 0.85rem;
+}
+
+.diploma-modal-header .comment {
+  display: block;
+
+  margin-bottom: 5px;
+}
+
+
+/* =========================================================
+   IMAGEN GRANDE DEL DIPLOMA
+========================================================= */
+
+.diploma-modal-image {
+  display: block;
+
+  width: 100%;
+  height: auto;
+
+  max-height: 75vh;
+
+  object-fit: contain;
+
+  background: var(--bg);
+}
+
+
+/* =========================================================
+   BOTÓN CERRAR
+========================================================= */
+
+.diploma-modal-close {
+  position: fixed;
+
+  top: 22px;
+  right: 28px;
+
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: var(--surface);
+
+  border: 1px solid var(--border);
+  border-radius: 50%;
+
+  color: var(--text);
+
+  font-family: 'Fira Code', monospace;
+  font-size: 1.8rem;
+  line-height: 1;
+
+  cursor: pointer;
+
+  z-index: 5100;
+
+  transition:
+    transform 0.25s ease,
+    color 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.diploma-modal-close:hover {
+  color: var(--green);
+
+  border-color: var(--green);
+
+  transform: rotate(90deg);
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 850px) {
+
+  .diplomas-grid {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+  .education-block {
+    margin-bottom: 50px;
+  }
+
+  .education-code-title,
+  .education-code-close {
+    font-size: 0.75rem;
+  }
+
+  .diplomas-grid {
+    gap: 14px;
+  }
+
+
+  /* CARD */
+
+  .diploma-card {
+    border-radius: 10px;
+  }
+
+
+  /* DIPLOMA */
+
+  .diploma-image-container {
+    aspect-ratio: 16 / 10;
+  }
+
+  .diploma-info {
+    padding: 16px;
+
+    font-size: 0.7rem;
+  }
+
+
+  /* En celular mostramos siempre
+     una pequeña indicación */
+
+  .diploma-overlay {
+    align-items: flex-end;
+
+    justify-content: flex-end;
+
+    padding: 10px;
+
+    opacity: 1;
+
+    background: transparent;
+  }
+
+  .diploma-overlay span {
+    padding: 6px 9px;
+
+    font-size: 0.62rem;
+
+    background: rgba(13, 17, 23, 0.9);
+  }
+
+
+  /* OTRA EDUCACIÓN */
+
+  .other-education-list {
+    padding: 16px;
+
+    font-size: 0.7rem;
+  }
+
+  .other-education-item {
+    padding: 11px 0;
+
+    line-height: 1.7;
+  }
+
+
+  /* MODAL */
+
+  .diploma-modal {
+    padding: 12px;
+  }
+
+  .diploma-modal-content {
+    max-height: 85vh;
+
+    border-radius: 10px;
+  }
+
+  .diploma-modal-header {
+    padding: 14px;
+
+    font-size: 0.68rem;
+  }
+
+  .diploma-modal-image {
+    max-height: 70vh;
+  }
+
+  .diploma-modal-close {
+    top: 12px;
+    right: 12px;
+
+    width: 36px;
+    height: 36px;
+
+    font-size: 1.5rem;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE MUY PEQUEÑO
+========================================================= */
+
+@media (max-width: 360px) {
+
+  .diploma-info {
+    font-size: 0.65rem;
+  }
+
+  .other-education-list {
+    font-size: 0.65rem;
+  }
+
+  .diploma-modal-header {
+    font-size: 0.62rem;
+  }
+
+}

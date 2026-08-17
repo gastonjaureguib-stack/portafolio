@@ -1,0 +1,11 @@
+.footer {
+  border-top: 1px solid var(--border);
+  padding: 35px 20px;
+  text-align: center;
+  font-family: 'Fira Code', monospace;
+  font-size: 0.85rem;
+}
+
+.footer .comment {
+  margin-bottom: 8px;
+}

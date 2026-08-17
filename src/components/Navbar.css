@@ -1,0 +1,48 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  background: rgba(13, 17, 23, 0.87);
+  border-bottom: 1px solid rgba(48, 54, 61, 0.7);
+  backdrop-filter: blur(15px);
+}
+
+.navbar-inner {
+  width: min(1100px, calc(100% - 40px));
+  height: 68px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar-logo {
+  font-family: 'Fira Code', monospace;
+  font-weight: 700;
+}
+
+.navbar-symbol {
+  color: var(--text);
+}
+
+.navbar-links {
+  display: flex;
+  gap: 25px;
+}
+
+.navbar-links a {
+  font-family: 'Fira Code', monospace;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.navbar-links a:hover {
+  color: var(--green);
+}
+
+@media (max-width: 800px) {
+  .navbar-links {
+    display: none;
+  }
+}

@@ -1,0 +1,55 @@
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.project-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 25px;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(152, 195, 121, 0.5);
+}
+
+.project-card h3 {
+  margin: 15px 0;
+  font-family: 'Fira Code', monospace;
+  font-size: 1rem;
+}
+
+.project-description {
+  color: var(--muted);
+  margin-bottom: 22px;
+}
+
+.project-stack {
+  font-family: 'Fira Code', monospace;
+  font-size: 0.82rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.project-stack span:not(.property) {
+  color: var(--green);
+  background: var(--bg);
+  padding: 5px 9px;
+  border-radius: 5px;
+}
+
+.project-status {
+  margin-top: 20px;
+  font-family: 'Fira Code', monospace;
+  font-size: 0.85rem;
+}
+
+@media (max-width: 900px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,299 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&display=swap');
+
+:root {
+  --bg: #0d1117;
+  --bg-soft: #11161d;
+  --surface: #161b22;
+  --surface-hover: #1c2129;
+
+  --border: #30363d;
+
+  --text: #e6edf3;
+  --muted: #8b949e;
+
+  --purple: #c678dd;
+  --blue: #61afef;
+  --green: #98c379;
+  --yellow: #e5c07b;
+  --red: #e06c75;
+  --cyan: #56b6c2;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
+body {
+  min-width: 320px;
+  font-family: 'Inter', sans-serif;
+  background:
+    radial-gradient(
+      circle at top right,
+      rgba(97, 175, 239, 0.07),
+      transparent 30%
+    ),
+    var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+body::-webkit-scrollbar {
+  width: 10px;
+}
+
+body::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+
+body::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 20px;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+a {
+  transition: 0.2s ease;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+main {
+  overflow: hidden;
+}
+
+.section {
+  width: min(1100px, calc(100% - 40px));
+  margin: 0 auto;
+  padding: 100px 0;
+}
+
+.section-heading {
+  margin-bottom: 45px;
+}
+
+.section-comment {
+  display: block;
+  font-family: 'Fira Code', monospace;
+  color: var(--muted);
+  margin-bottom: 8px;
+}
+
+.section-title {
+  font-family: 'Fira Code', monospace;
+  font-size: clamp(1.8rem, 4vw, 2.7rem);
+  overflow-wrap: anywhere;
+}
+
+.keyword {
+  color: var(--purple);
+}
+
+.variable {
+  color: var(--blue);
+}
+
+.string {
+  color: var(--green);
+}
+
+.boolean {
+  color: var(--yellow);
+}
+
+.property {
+  color: var(--cyan);
+}
+
+.comment {
+  color: var(--muted);
+}
+
+.code-card {
+  width: 100%;
+  background: rgba(22, 27, 34, 0.82);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  overflow: hidden;
+  backdrop-filter: blur(12px);
+}
+
+.code-header {
+  min-height: 42px;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  padding: 0 15px;
+  gap: 8px;
+}
+
+.dot {
+  width: 11px;
+  height: 11px;
+  min-width: 11px;
+  border-radius: 50%;
+}
+
+.dot.red {
+  background: #ff5f56;
+}
+
+.dot.yellow {
+  background: #ffbd2e;
+}
+
+.dot.green {
+  background: #27c93f;
+}
+
+.file-name {
+  margin-left: 12px;
+  font-family: 'Fira Code', monospace;
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+.code-content {
+  padding: 28px;
+  font-family: 'Fira Code', monospace;
+  font-size: 0.95rem;
+  overflow-x: auto;
+}
+
+.code-line {
+  margin: 7px 0;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.indent {
+  padding-left: 25px;
+}
+
+.indent-2 {
+  padding-left: 50px;
+}
+
+.btn-primary,
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 46px;
+  padding: 13px 22px;
+  border-radius: 8px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.btn-primary {
+  background: var(--green);
+  color: #0d1117;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(152, 195, 121, 0.16);
+}
+
+.btn-secondary {
+  border: 1px solid var(--border);
+  color: var(--text);
+}
+
+.btn-secondary:hover {
+  border-color: var(--blue);
+  color: var(--blue);
+}
+
+/* ============================= */
+/* TABLET */
+/* ============================= */
+
+@media (max-width: 900px) {
+  .section {
+    width: min(100% - 32px, 1100px);
+    padding: 80px 0;
+  }
+
+  .section-heading {
+    margin-bottom: 32px;
+  }
+
+  .code-content {
+    padding: 24px;
+  }
+}
+
+/* ============================= */
+/* MOBILE */
+/* ============================= */
+
+@media (max-width: 600px) {
+  html {
+    scroll-padding-top: 70px;
+  }
+
+  .section {
+    width: min(100% - 24px, 1100px);
+    padding: 68px 0;
+  }
+
+  .section-heading {
+    margin-bottom: 26px;
+  }
+
+  .section-comment {
+    font-size: 0.78rem;
+  }
+
+  .section-title {
+    font-size: 1.45rem;
+    line-height: 1.3;
+  }
+
+  .code-card {
+    border-radius: 10px;
+  }
+
+  .code-header {
+    padding: 0 12px;
+  }
+
+  .file-name {
+    font-size: 0.7rem;
+  }
+
+  .code-content {
+    padding: 18px 14px;
+    font-size: 0.75rem;
+  }
+
+  .indent {
+    padding-left: 16px;
+  }
+
+  .indent-2 {
+    padding-left: 30px;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    width: 100%;
+  }
+}

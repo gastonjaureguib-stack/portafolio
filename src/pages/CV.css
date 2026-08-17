@@ -1,0 +1,1373 @@
+/* =========================================================
+   RESET CV
+========================================================= */
+
+.cv-normal {
+  margin: 0;
+  padding: 0;
+
+  min-height: 100vh;
+
+  background:
+    linear-gradient(
+      180deg,
+      #f8fafc 0%,
+      #eef2f7 100%
+    );
+
+  color: #111827;
+
+  font-family: 'Poppins', sans-serif;
+}
+
+.cv-normal * {
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   PORTADA
+========================================================= */
+
+.cv-normal .portada {
+  min-height: 80vh;
+
+  background:
+    linear-gradient(
+      135deg,
+      #020617,
+      #0a2540
+    );
+
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+
+  padding: 80px 20px 60px;
+
+  position: relative;
+
+  overflow: hidden;
+}
+
+.cv-normal .portada::before {
+  content: '';
+
+  position: absolute;
+
+  width: 500px;
+  height: 500px;
+
+  top: -250px;
+  right: -180px;
+
+  border-radius: 50%;
+
+  background:
+    rgba(41, 219, 160, 0.1);
+
+  filter: blur(30px);
+}
+
+.cv-normal .portada::after {
+  content: '';
+
+  position: absolute;
+
+  width: 450px;
+  height: 450px;
+
+  bottom: -250px;
+  left: -180px;
+
+  border-radius: 50%;
+
+  background:
+    rgba(39, 140, 186, 0.14);
+
+  filter: blur(30px);
+}
+
+
+/* =========================================================
+   ACCIONES SUPERIORES
+========================================================= */
+
+.cv-top-actions {
+  position: absolute;
+
+  top: 25px;
+  left: 50%;
+
+  width: min(1100px, calc(100% - 40px));
+
+  transform: translateX(-50%);
+
+  z-index: 10;
+
+  display: flex;
+  justify-content: space-between;
+
+  gap: 15px;
+}
+
+.cv-volver,
+.cv-imprimir {
+  padding: 9px 15px;
+
+  border-radius: 30px;
+
+  font-size: 0.8rem;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: 0.25s ease;
+}
+
+.cv-volver {
+  color: white;
+
+  text-decoration: none;
+
+  border: 1px solid rgba(255,255,255,0.4);
+
+  background: rgba(255,255,255,0.08);
+}
+
+.cv-imprimir {
+  color: white;
+
+  border: 1px solid rgba(255,255,255,0.4);
+
+  background: transparent;
+}
+
+.cv-volver:hover,
+.cv-imprimir:hover {
+  background: white;
+
+  color: #0a2540;
+}
+
+
+/* =========================================================
+   PORTADA TEXTO
+========================================================= */
+
+.cv-normal .tituloh1 {
+  position: relative;
+
+  z-index: 1;
+
+  margin: 0;
+
+  font-size:
+    clamp(2.8rem, 8vw, 5rem);
+
+  font-weight: 700;
+
+  color: white;
+
+  line-height: 1.05;
+}
+
+.cv-normal .tituloh2 {
+  position: relative;
+
+  z-index: 1;
+
+  margin-top: 18px;
+
+  font-size:
+    clamp(1.3rem, 3vw, 1.8rem);
+
+  font-weight: 500;
+
+  color: white;
+}
+
+.cv-role-extra {
+  position: relative;
+
+  z-index: 1;
+
+  margin-top: 8px;
+
+  color: #29dba0;
+
+  font-size: 0.95rem;
+
+  font-weight: 500;
+}
+
+.cv-normal .slogan {
+  position: relative;
+
+  z-index: 1;
+
+  max-width: 700px;
+
+  margin-top: 20px;
+
+  color: #dbeafe;
+
+  line-height: 1.7;
+
+  font-size: 1rem;
+}
+
+
+/* =========================================================
+   BOTONES
+========================================================= */
+
+.cv-normal .botonagil {
+  position: relative;
+
+  z-index: 2;
+
+  display: flex;
+
+  justify-content: center;
+
+  gap: 20px;
+
+  margin-top: 30px;
+
+  flex-wrap: wrap;
+}
+
+.cv-normal .botonagil a {
+  display: inline-block;
+
+  padding: 12px 28px;
+
+  border-radius: 50px;
+
+  text-decoration: none;
+
+  font-size: 0.95rem;
+  font-weight: 600;
+
+  transition: 0.3s ease;
+}
+
+.cv-normal .botonproyectos {
+  background:
+    linear-gradient(
+      135deg,
+      #0e7871,
+      #199098
+    );
+
+  color: white;
+
+  box-shadow:
+    0 6px 18px
+    rgba(41, 219, 160, 0.35);
+}
+
+.cv-normal .botoncontacto {
+  color: white;
+
+  border: 2px solid white;
+}
+
+.cv-normal .botonagil a:hover {
+  transform:
+    translateY(-3px)
+    scale(1.03);
+}
+
+
+/* =========================================================
+   TITULOS GENERALES
+========================================================= */
+
+.cv-normal .profesional h2,
+.cv-normal .sobre-mi h2,
+.cv-normal .servicios h2,
+.cv-normal .formacion h2,
+.cv-normal .experiencia-titulo h2,
+.cv-section-title,
+.cv-normal .contacto h2 {
+  text-align: center;
+
+  font-size: 2rem;
+
+  margin: 60px auto 30px;
+
+  color: #111827;
+
+  text-decoration: underline;
+
+  text-decoration-color: #105d2c;
+
+  text-decoration-thickness: 3px;
+
+  text-underline-offset: 6px;
+}
+
+
+/* =========================================================
+   PERFIL / ABOUT
+========================================================= */
+
+.cv-normal .profesional,
+.cv-normal .sobre-mi {
+  padding: 10px 20px 30px;
+}
+
+.cv-normal .profesional p,
+.cv-normal .sobre-mi p {
+  max-width: 800px;
+
+  margin: 0 auto 18px;
+
+  text-align: center;
+
+  color: #374151;
+
+  font-size: 1.05rem;
+
+  line-height: 1.8;
+}
+
+
+/* =========================================================
+   PROYECTOS
+========================================================= */
+
+.cv-proyectos-section {
+  padding: 10px 20px 50px;
+}
+
+.cv-normal .cards {
+  width: min(1100px, 100%);
+
+  margin: auto;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 25px;
+}
+
+.cv-normal .cardproyectos {
+  position: relative;
+
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+
+  padding: 28px;
+
+  border-radius: 22px;
+
+  background:
+    rgba(255, 255, 255, 0.82);
+
+  border:
+    1px solid rgba(255,255,255,0.6);
+
+  box-shadow:
+    0 10px 25px rgba(0,0,0,0.06),
+    0 2px 10px rgba(0,0,0,0.03);
+
+  transition: 0.3s ease;
+}
+
+.cv-normal .cardproyectos::before {
+  content: '';
+
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 4px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #278cba,
+      #22c55e
+    );
+}
+
+.cv-normal .cardproyectos:hover {
+  transform:
+    translateY(-8px);
+
+  box-shadow:
+    0 25px 50px rgba(0,0,0,0.12);
+}
+
+.cv-normal .cardproyectos h3 {
+  margin: 10px 0 12px;
+
+  font-size: 1.6rem;
+
+  color: #111827;
+}
+
+.cv-normal .cardproyectos p {
+  margin-bottom: 14px;
+
+  color: #4b5563;
+
+  line-height: 1.7;
+
+  font-size: 0.95rem;
+}
+
+.cv-project-type {
+  color: #0e7871;
+
+  font-size: 0.75rem;
+
+  font-weight: 700;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.08em;
+}
+
+.cv-tech-list {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 7px;
+
+  margin: 8px 0 20px;
+}
+
+.cv-tech-list span {
+  padding: 5px 9px;
+
+  border-radius: 20px;
+
+  background: #edf7f5;
+
+  color: #0e7871;
+
+  font-size: 0.72rem;
+
+  font-weight: 600;
+}
+
+.cv-normal .boton-proyectos {
+  margin-top: auto;
+
+  display: inline-block;
+
+  align-self: flex-start;
+
+  padding: 10px 22px;
+
+  border-radius: 50px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #0e7871,
+      #199098
+    );
+
+  color: white;
+
+  text-decoration: none;
+
+  font-size: 0.85rem;
+
+  font-weight: 600;
+
+  transition: 0.3s ease;
+}
+
+.cv-normal .boton-proyectos:hover {
+  transform:
+    translateY(-2px);
+
+  box-shadow:
+    0 8px 18px
+    rgba(14, 120, 113, 0.28);
+}
+
+
+/* =========================================================
+   EXPERIENCIA
+========================================================= */
+
+.cv-normal .experiencia-titulo {
+  padding: 10px 20px 50px;
+
+  text-align: center;
+}
+
+.cv-normal .experiencia {
+  position: relative;
+
+  overflow: hidden;
+
+  max-width: 1100px;
+
+  margin: 30px auto 0;
+
+  padding: 38px 30px;
+
+  border-radius: 20px;
+
+  background:
+    rgba(255,255,255,0.82);
+
+  border:
+    1px solid rgba(255,255,255,0.6);
+
+  box-shadow:
+    0 10px 25px rgba(0,0,0,0.05);
+
+  transition: 0.3s ease;
+}
+
+.cv-normal .experiencia::before {
+  content: '';
+
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 4px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #278cba,
+      #22c55e
+    );
+}
+
+.cv-normal .experiencia:hover {
+  transform: translateY(-6px);
+
+  box-shadow:
+    0 20px 45px
+    rgba(0,0,0,0.09);
+}
+
+.cv-normal .experiencia h3 {
+  margin-bottom: 10px;
+
+  color: #111827;
+
+  font-size: 1.4rem;
+
+  text-decoration: underline;
+}
+
+.cv-normal .experiencia p {
+  max-width: 750px;
+
+  margin: 0 auto 15px;
+
+  color: #4b5563;
+
+  font-size: 1rem;
+
+  line-height: 1.7;
+}
+
+.cv-periodo {
+  font-size: 0.85rem !important;
+
+  font-weight: 600;
+
+  color: #0e7871 !important;
+}
+
+.cv-experience-tools {
+  max-width: 750px;
+
+  margin: 25px auto;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  gap: 15px;
+}
+
+
+/* =========================================================
+   LOGOS
+========================================================= */
+
+.cv-normal .herramientas-logos {
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  flex-wrap: wrap;
+
+  gap: 12px;
+}
+
+.cv-normal .herramientas-logos img {
+  width: 52px;
+  height: 52px;
+
+  object-fit: contain;
+}
+
+
+/* =========================================================
+   REFERENCIAS
+========================================================= */
+
+.cv-normal .contactoreferencia {
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  gap: 10px;
+
+  margin-top: 20px;
+
+  flex-wrap: wrap;
+}
+
+.cv-normal .referencialaboral {
+  color: #4b5563;
+
+  font-size: 0.78rem;
+}
+
+.cv-normal .boton-referencia {
+  padding: 5px 11px;
+
+  border-radius: 6px;
+
+  background: #179e71;
+
+  color: white;
+
+  text-decoration: none;
+
+  font-size: 0.75rem;
+
+  transition: 0.2s ease;
+}
+
+.cv-normal .boton-referencia:hover {
+  background: #4f46e5;
+}
+
+
+/* =========================================================
+   SERVICIOS / SKILLS
+========================================================= */
+
+.cv-normal .servicios {
+  padding: 10px 20px 50px;
+}
+
+.cv-normal .servicios > p {
+  text-align: center;
+
+  color: #4b5563;
+}
+
+.cv-normal .cards-servicios {
+  position: relative;
+
+  overflow: hidden;
+
+  max-width: 1100px;
+
+  margin: 30px auto 0;
+
+  padding: 30px;
+
+  border-radius: 20px;
+
+  background:
+    rgba(255,255,255,0.82);
+
+  border:
+    1px solid rgba(255,255,255,0.6);
+
+  box-shadow:
+    0 10px 25px rgba(0,0,0,0.05);
+}
+
+.cv-normal .cards-servicios::before {
+  content: '';
+
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 4px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #278cba,
+      #22c55e
+    );
+}
+
+.cv-skills-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(6, minmax(0, 1fr));
+
+  gap: 15px;
+}
+
+.cv-skill {
+  min-width: 0;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 8px;
+
+  min-height: 100px;
+
+  padding: 12px 8px;
+
+  border-radius: 12px;
+
+  background: #f8fafc;
+
+  border: 1px solid #e5e7eb;
+
+  transition: 0.25s ease;
+}
+
+.cv-skill:hover {
+  transform:
+    translateY(-4px);
+
+  border-color: #22c55e;
+}
+
+.cv-skill img {
+  width: 44px;
+  height: 44px;
+
+  object-fit: contain;
+}
+
+.cv-skill span {
+  text-align: center;
+
+  color: #374151;
+
+  font-size: 0.72rem;
+
+  font-weight: 600;
+}
+
+.cv-services-list p {
+  margin: 10px 0;
+
+  color: #374151;
+
+  text-align: center;
+
+  font-size: 1rem;
+}
+
+
+/* =========================================================
+   FORMACIÓN
+========================================================= */
+
+.cv-normal .formacion {
+  padding: 10px 20px 60px;
+}
+
+.cv-formacion-group {
+  max-width: 1100px;
+
+  margin: 30px auto 50px;
+}
+
+.cv-formacion-group h3 {
+  margin-bottom: 20px;
+
+  text-align: center;
+
+  color: #374151;
+}
+
+.cv-diplomas-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 20px;
+}
+
+.cv-diploma-card {
+  overflow: hidden;
+
+  border-radius: 18px;
+
+  background: white;
+
+  border: 1px solid #e5e7eb;
+
+  box-shadow:
+    0 8px 20px rgba(0,0,0,0.05);
+
+  transition: 0.25s ease;
+}
+
+.cv-diploma-card:hover {
+  transform: translateY(-5px);
+}
+
+.cv-diploma-card img {
+  display: block;
+
+  width: 100%;
+
+  aspect-ratio: 16 / 10;
+
+  object-fit: cover;
+}
+
+.cv-diploma-card > div {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 3px;
+
+  padding: 16px;
+}
+
+.cv-normal .card-formacion {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 15px;
+
+  max-width: 1100px;
+
+  margin: auto;
+}
+
+.cv-normal .item-formacion {
+  position: relative;
+
+  overflow: hidden;
+
+  display: flex;
+
+  flex-direction: column;
+
+  padding: 22px 25px;
+
+  border-radius: 18px;
+
+  background:
+    rgba(255,255,255,0.82);
+
+  border:
+    1px solid rgba(255,255,255,0.6);
+
+  box-shadow:
+    0 8px 20px
+    rgba(0,0,0,0.05);
+
+  transition: 0.25s ease;
+}
+
+.cv-normal .item-formacion::before {
+  content: '';
+
+  position: absolute;
+
+  left: 0;
+
+  top: 8px;
+  bottom: 8px;
+
+  width: 4px;
+
+  border-radius: 4px;
+
+  background:
+    linear-gradient(
+      180deg,
+      #4f46e5,
+      #22c55e
+    );
+}
+
+.cv-normal .item-formacion:hover {
+  transform:
+    translateX(5px);
+}
+
+.cv-normal .item-formacion .titulo {
+  color: #111827;
+
+  font-size: 1.1rem;
+
+  font-weight: 600;
+}
+
+.cv-normal .item-formacion .detalle {
+  margin-top: 4px;
+
+  color: #6b7280;
+
+  font-size: 0.9rem;
+}
+
+
+/* =========================================================
+   CONTACTO
+========================================================= */
+
+.cv-normal .contacto {
+  padding: 10px 20px 80px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+}
+
+.cv-normal .contacto > p {
+  margin-bottom: 25px;
+
+  text-align: center;
+
+  color: #4b5563;
+}
+
+.cv-normal .cardinfo {
+  position: relative;
+
+  overflow: hidden;
+
+  width: 100%;
+
+  max-width: 1080px;
+
+  padding: 30px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  gap: 10px;
+
+  border-radius: 20px;
+
+  background:
+    rgba(255,255,255,0.82);
+
+  border:
+    1px solid rgba(255,255,255,0.6);
+
+  box-shadow:
+    0 10px 25px
+    rgba(0,0,0,0.05);
+}
+
+.cv-normal .cardinfo::before {
+  content: '';
+
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 4px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #4f46e5,
+      #22c55e
+    );
+}
+
+.cv-normal .cardinfo p {
+  margin: 4px 0;
+
+  color: #374151;
+}
+
+.cv-normal .botones-contacto {
+  display: flex;
+
+  justify-content: center;
+
+  flex-wrap: wrap;
+
+  gap: 10px;
+
+  margin-top: 15px;
+}
+
+.cv-normal .btn-contacto {
+  padding: 8px 14px;
+
+  border-radius: 10px;
+
+  background: white;
+
+  border: 1px solid #d1d5db;
+
+  color: #111827;
+
+  text-decoration: none;
+
+  font-size: 0.8rem;
+
+  transition: 0.25s ease;
+}
+
+.cv-normal .btn-contacto:nth-child(1):hover {
+  background: #25D366;
+
+  color: white;
+}
+
+.cv-normal .btn-contacto:nth-child(2):hover {
+  background: #ea4335;
+
+  color: white;
+}
+
+.cv-normal .btn-contacto:nth-child(3):hover {
+  background: #0A66C2;
+
+  color: white;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.cv-normal footer {
+  padding: 40px 20px 25px;
+
+  background: #111827;
+
+  color: #9ca3af;
+
+  text-align: center;
+}
+
+.cv-normal .footer-links {
+  display: flex;
+
+  justify-content: center;
+
+  flex-wrap: wrap;
+
+  gap: 15px;
+
+  margin-bottom: 20px;
+}
+
+.cv-normal .footer-links a {
+  padding: 8px 16px;
+
+  border-radius: 999px;
+
+  background: #1f2937;
+
+  color: #e5e7eb;
+
+  text-decoration: none;
+
+  transition: 0.25s ease;
+}
+
+.cv-normal .footer-links a:hover {
+  background:
+    linear-gradient(
+      135deg,
+      #0e7871,
+      #199098
+    );
+
+  color: white;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+  .cv-skills-grid {
+    grid-template-columns:
+      repeat(4, minmax(0, 1fr));
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 768px) {
+
+  .cv-normal .portada {
+    min-height: auto;
+
+    padding:
+      100px 15px 55px;
+  }
+
+  .cv-top-actions {
+    top: 18px;
+
+    width: calc(100% - 24px);
+  }
+
+  .cv-volver,
+  .cv-imprimir {
+    padding: 7px 10px;
+
+    font-size: 0.68rem;
+  }
+
+  .cv-normal .tituloh1 {
+    font-size: 2.4rem;
+  }
+
+  .cv-normal .tituloh2 {
+    font-size: 1.2rem;
+  }
+
+  .cv-role-extra {
+    font-size: 0.78rem;
+  }
+
+  .cv-normal .slogan {
+    font-size: 0.9rem;
+  }
+
+  .cv-normal .botonagil {
+    width: 100%;
+
+    flex-direction: column;
+  }
+
+  .cv-normal .botonagil a {
+    width: 100%;
+  }
+
+
+  /* TITULOS */
+
+  .cv-normal .profesional h2,
+  .cv-normal .sobre-mi h2,
+  .cv-normal .servicios h2,
+  .cv-normal .formacion h2,
+  .cv-normal .experiencia-titulo h2,
+  .cv-section-title,
+  .cv-normal .contacto h2 {
+    margin-top: 40px;
+
+    font-size: 1.6rem;
+  }
+
+
+  /* TEXTOS */
+
+  .cv-normal .profesional p,
+  .cv-normal .sobre-mi p {
+    font-size: 0.95rem;
+  }
+
+
+  /* PROYECTOS */
+
+  .cv-normal .cards {
+    grid-template-columns: 1fr;
+  }
+
+  .cv-normal .cardproyectos {
+    padding: 20px;
+  }
+
+  .cv-normal .cardproyectos h3 {
+    font-size: 1.35rem;
+  }
+
+
+  /* EXPERIENCIA */
+
+  .cv-normal .experiencia {
+    padding: 25px 18px;
+  }
+
+  .cv-normal .experiencia h3 {
+    font-size: 1.15rem;
+  }
+
+  .cv-normal .experiencia p {
+    font-size: 0.92rem;
+  }
+
+
+  /* SKILLS */
+
+  .cv-skills-grid {
+    grid-template-columns:
+      repeat(3, minmax(0, 1fr));
+  }
+
+  .cv-skill {
+    min-height: 90px;
+  }
+
+  .cv-skill img {
+    width: 38px;
+    height: 38px;
+  }
+
+
+  /* DIPLOMAS */
+
+  .cv-diplomas-grid {
+    grid-template-columns: 1fr;
+  }
+
+
+  /* CONTACTO */
+
+  .cv-normal .cardinfo {
+    padding: 22px 15px;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE PEQUEÑO
+========================================================= */
+
+@media (max-width: 480px) {
+
+  .cv-top-actions {
+    flex-direction: column;
+
+    align-items: stretch;
+  }
+
+  .cv-volver,
+  .cv-imprimir {
+    text-align: center;
+  }
+
+  .cv-normal .portada {
+    padding-top: 130px;
+  }
+
+  .cv-skills-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+}
+
+
+/* =========================================================
+   PRINT
+========================================================= */
+
+@media print {
+
+  .cv-top-actions,
+  .botonagil,
+  .botones-contacto,
+  .footer-links,
+  .boton-referencia,
+  .boton-proyectos {
+    display: none !important;
+  }
+
+  .cv-normal {
+    background: white;
+  }
+
+  .cv-normal .portada {
+    min-height: auto;
+
+    padding: 35px 20px;
+
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .cv-normal .cardproyectos,
+  .cv-normal .experiencia,
+  .cv-normal .cards-servicios,
+  .cv-normal .item-formacion,
+  .cv-diploma-card,
+  .cv-normal .cardinfo {
+    box-shadow: none;
+
+    break-inside: avoid;
+  }
+
+  .cv-normal .profesional h2,
+  .cv-normal .sobre-mi h2,
+  .cv-normal .servicios h2,
+  .cv-normal .formacion h2,
+  .cv-normal .experiencia-titulo h2,
+  .cv-section-title,
+  .cv-normal .contacto h2 {
+    margin-top: 30px;
+  }
+
+}

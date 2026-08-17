@@ -1,0 +1,37 @@
+.contact {
+  text-align: center;
+  padding-top: 120px;
+  padding-bottom: 140px;
+}
+
+.contact h2 {
+  font-family: 'Fira Code', monospace;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  margin: 15px 0 25px;
+}
+
+.contact-text {
+  color: var(--muted);
+  max-width: 580px;
+  margin: 0 auto 40px;
+  font-size: 1.05rem;
+}
+
+.contact-code {
+  max-width: 630px;
+  margin: auto;
+  text-align: left;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 25px;
+  font-family: 'Fira Code', monospace;
+}
+
+.contact-code p {
+  margin: 8px 0;
+}
+
+.contact-code a:hover {
+  text-decoration: underline;
+}
