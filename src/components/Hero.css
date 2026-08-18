@@ -370,3 +370,36 @@
     font-size: 0.78rem;
   }
 }
+
+.btn-download-cv {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 10px 16px;
+
+  border: 1px solid #2d7a5b;
+  border-radius: 6px;
+
+  color: #2d7a5b;
+  background: transparent;
+
+  text-decoration: none;
+  font-family: inherit;
+  font-size: 0.9rem;
+
+  transition: 0.2s ease;
+}
+
+.btn-download-cv:hover {
+  background: #2d7a5b;
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+.hero-classic {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}

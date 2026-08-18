@@ -54,7 +54,7 @@ const Hero = () => {
               :{' '}
 
               <span className="string">
-                "Full Stack Developer"
+                "Estudiante avanzado Full Stack developer"
               </span>
               ,
             </p>
@@ -136,6 +136,14 @@ const Hero = () => {
               >
                 Ver versión clásica
               </Link>
+
+              <a
+                href="/cvgastonjaureguiberry.pdf"
+                download="CV-Gaston-Jaureguiberry.pdf"
+                className="btn-download-cv"
+              >
+                ↓ Descargar CV
+              </a>
 
             </div>
 
