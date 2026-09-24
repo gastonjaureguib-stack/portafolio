@@ -86,7 +86,11 @@ const CV = () => {
       <header className="portada">
 
         <div className="cv-top-actions">
-          <Link to="/" className="cv-volver">
+
+          <Link
+            to="/"
+            className="cv-volver"
+          >
             ← Portfolio creativo
           </Link>
 
@@ -97,6 +101,7 @@ const CV = () => {
           >
             Imprimir / Guardar PDF
           </button>
+
         </div>
 
         <h1 className="tituloh1">
@@ -104,7 +109,7 @@ const CV = () => {
         </h1>
 
         <h2 className="tituloh2">
-          Full Stack Developer
+          Frontend Developer · React
         </h2>
 
         <p className="cv-role-extra">
@@ -118,6 +123,7 @@ const CV = () => {
         </p>
 
         <div className="botonagil">
+
           <a
             href="#proyectos-cv"
             className="botonproyectos"
@@ -131,10 +137,10 @@ const CV = () => {
           >
             Contactarme
           </a>
+
         </div>
 
       </header>
-
 
       {/* ======================================================
           PERFIL PROFESIONAL
@@ -147,22 +153,21 @@ const CV = () => {
         </h2>
 
         <p>
-          Desarrollador Full Stack con formación en desarrollo web
-          y experiencia previa en comunicación, marketing y diseño.
-          Esta combinación me permite comprender tanto los aspectos
-          técnicos de un producto como las necesidades de negocio
-          que existen detrás de cada proyecto.
+          Desarrollador Frontend con formación en desarrollo web,
+          especializado en React y JavaScript, con experiencia
+          desarrollando aplicaciones y sitios web para proyectos
+          reales.
         </p>
 
         <p>
-          Trabajo con tecnologías frontend y backend para desarrollar
-          aplicaciones, sitios web y soluciones digitales funcionales,
-          claras y orientadas a resultados. Mantengo un enfoque de
-          aprendizaje constante, organización del código y mejora continua.
+          Trabajo con React, JavaScript, HTML, CSS, Supabase,
+          integración de APIs y Git. Mi experiencia previa en
+          comunicación, marketing y diseño me permite complementar
+          el desarrollo técnico con una comprensión clara del
+          usuario, el producto y los objetivos de negocio.
         </p>
 
       </section>
-
 
       {/* ======================================================
           SOBRE MÍ
@@ -189,7 +194,6 @@ const CV = () => {
 
       </section>
 
-
       {/* ======================================================
           PROYECTOS
       ====================================================== */}
@@ -205,7 +209,98 @@ const CV = () => {
 
         <div className="cards cv-project-grid">
 
-          {/* SPOTTER */}
+          {/* ==================================================
+              PROTECTORA
+          ================================================== */}
+
+          <article className="cardproyectos cv-project-card">
+
+            <span className="cv-project-type">
+              Web App · Proyecto real
+            </span>
+
+            <h3>
+              Protectora de Animales de Mercedes
+            </h3>
+
+            <p>
+              Plataforma web desarrollada para una organización
+              real, orientada a visibilizar animales en adopción
+              y facilitar el acceso a la información.
+            </p>
+
+            <p>
+              Incluye sitio público y panel administrativo para
+              gestionar animales, adopciones, padrinazgos y
+              diferentes contenidos de la plataforma.
+            </p>
+
+            <div className="cv-tech-list">
+              <span>React</span>
+              <span>JavaScript</span>
+              <span>Supabase</span>
+              <span>CSS</span>
+            </div>
+
+            <a
+              href="https://adopciones.protectoramercedesapp.workers.dev"
+              target="_blank"
+              rel="noreferrer"
+              className="boton-proyectos"
+            >
+              Visitar Protectora
+            </a>
+
+          </article>
+
+          {/* ==================================================
+              KANSHA
+          ================================================== */}
+
+          <article className="cardproyectos cv-project-card">
+
+            <span className="cv-project-type">
+              Website / Web App · Proyecto real
+            </span>
+
+            <h3>
+              Kansha Viajes
+            </h3>
+
+            <p>
+              Plataforma web desarrollada para una agencia de viajes,
+              orientada a presentar destinos, promociones, paquetes
+              y experiencias de manera visual y clara.
+            </p>
+
+            <p>
+              Incluye herramientas de administración y combina
+              desarrollo frontend, gestión de información,
+              diseño y comunicación digital.
+            </p>
+
+            <div className="cv-tech-list">
+              <span>React</span>
+              <span>JavaScript</span>
+              <span>Supabase</span>
+              <span>CSS</span>
+              <span>Vite</span>
+            </div>
+
+            <a
+              href="https://kanshaviajes.com"
+              target="_blank"
+              rel="noreferrer"
+              className="boton-proyectos"
+            >
+              Visitar Kansha
+            </a>
+
+          </article>
+
+          {/* ==================================================
+              SPOTTER
+          ================================================== */}
 
           <article className="cardproyectos cv-project-card">
 
@@ -238,7 +333,7 @@ const CV = () => {
             </div>
 
             <a
-              href="https://spoterapps.com"
+              href="https://spotterapps.com"
               target="_blank"
               rel="noreferrer"
               className="boton-proyectos"
@@ -248,119 +343,9 @@ const CV = () => {
 
           </article>
 
-
-          {/* KANSHA */}
-
-          <article className="cardproyectos cv-project-card">
-
-            <span className="cv-project-type">
-              Website
-            </span>
-
-            <h3>
-              Kansha Viajes
-            </h3>
-
-            <p>
-              Desarrollo web para agencia de viajes orientado a
-              presentar destinos, promociones, paquetes y experiencias
-              de manera visual y clara.
-            </p>
-
-            <p>
-              El proyecto combina desarrollo frontend, diseño,
-              comunicación digital y estrategia de contenidos.
-            </p>
-
-            <div className="cv-tech-list">
-              <span>React</span>
-              <span>CSS</span>
-              <span>Vite</span>
-              <span>Vercel</span>
-            </div>
-
-            <a
-              href="https://kanshaviajes.com"
-              target="_blank"
-              rel="noreferrer"
-              className="boton-proyectos"
-            >
-              Visitar Kansha
-            </a>
-
-          </article>
-
-
-          {/* ECOMMERCE */}
-
-          <article className="cardproyectos cv-project-card">
-
-            <span className="cv-project-type">
-              Web App
-            </span>
-
-            <h3>
-              E-commerce React
-            </h3>
-
-            <p>
-              SPA desarrollada con React con navegación por categorías,
-              detalle de productos, carrito de compras y generación
-              de órdenes.
-            </p>
-
-            <p>
-              Proyecto desarrollado como parte de mi formación frontend,
-              utilizando Firebase como base de datos.
-            </p>
-
-            <div className="cv-tech-list">
-              <span>React</span>
-              <span>JavaScript</span>
-              <span>Firebase</span>
-              <span>Vite</span>
-            </div>
-
-          </article>
-
-
-          {/* BACKEND */}
-
-          <article className="cardproyectos cv-project-card">
-
-            <span className="cv-project-type">
-              Backend / API
-            </span>
-
-            <h3>
-              API Agencia de Viajes
-            </h3>
-
-            <p>
-              Backend desarrollado con Node.js, Express y MongoDB
-              para gestionar servicios turísticos, reservas y mensajes.
-            </p>
-
-            <p>
-              Incluye arquitectura en capas, validaciones con Zod,
-              MongoDB Atlas, Handlebars y comunicación en tiempo real
-              mediante Socket.io.
-            </p>
-
-            <div className="cv-tech-list">
-              <span>Node.js</span>
-              <span>Express</span>
-              <span>MongoDB</span>
-              <span>Zod</span>
-              <span>Socket.io</span>
-            </div>
-
-          </article>
-
         </div>
 
       </section>
-
 
       {/* ======================================================
           EXPERIENCIA
@@ -371,7 +356,6 @@ const CV = () => {
         <h2>
           Experiencia Profesional
         </h2>
-
 
         {/* FREELANCE */}
 
@@ -452,7 +436,6 @@ const CV = () => {
 
         </div>
 
-
         {/* CENTRO COMERCIAL */}
 
         <div className="experiencia">
@@ -465,10 +448,7 @@ const CV = () => {
             Encargado de Comunicación y Marketing
           </p>
 
-          <p className="cv-periodo">
-            2017 — 2022
-          </p>
-
+          
           <p>
             Gestión de comunicación institucional, marketing,
             contenido y acciones de promoción.
@@ -492,7 +472,6 @@ const CV = () => {
           </div>
 
         </div>
-
 
         {/* REGENCY */}
 
@@ -525,7 +504,6 @@ const CV = () => {
 
         </div>
 
-
         {/* BALMORAL */}
 
         <div className="experiencia">
@@ -538,14 +516,10 @@ const CV = () => {
             Ejecutivo de Marketing y Eventos
           </p>
 
-          <p className="cv-periodo">
-            2013 — 2016
-          </p>
-
+         
         </div>
 
       </section>
-
 
       {/* ======================================================
           HABILIDADES
@@ -576,7 +550,8 @@ const CV = () => {
                   src={skill.logo}
                   alt={skill.name}
                   onError={(e) => {
-                    e.currentTarget.style.display = 'none';
+                    e.currentTarget.style.display =
+                      'none';
                   }}
                 />
 
@@ -592,7 +567,6 @@ const CV = () => {
         </div>
 
       </section>
-
 
       {/* ======================================================
           SERVICIOS
@@ -650,7 +624,6 @@ const CV = () => {
 
       </section>
 
-
       {/* ======================================================
           FORMACIÓN
       ====================================================== */}
@@ -660,7 +633,6 @@ const CV = () => {
         <h2>
           Formación
         </h2>
-
 
         {/* CODERHOUSE */}
 
@@ -685,6 +657,7 @@ const CV = () => {
                 />
 
                 <div>
+
                   <span className="titulo">
                     {diploma.title}
                   </span>
@@ -692,6 +665,7 @@ const CV = () => {
                   <span className="detalle">
                     {diploma.institution}
                   </span>
+
                 </div>
 
               </article>
@@ -701,7 +675,6 @@ const CV = () => {
           </div>
 
         </div>
-
 
         {/* OTRAS FORMACIONES */}
 
@@ -719,7 +692,6 @@ const CV = () => {
 
           </div>
 
-
           <div className="item-formacion">
 
             <span className="titulo">
@@ -732,7 +704,6 @@ const CV = () => {
             </span>
 
           </div>
-
 
           <div className="item-formacion">
 
@@ -749,7 +720,6 @@ const CV = () => {
         </div>
 
       </section>
-
 
       {/* ======================================================
           CONTACTO
@@ -792,7 +762,6 @@ const CV = () => {
             Uruguay
           </p>
 
-
           <div className="botones-contacto">
 
             <a
@@ -825,7 +794,6 @@ const CV = () => {
         </div>
 
       </section>
-
 
       {/* ======================================================
           FOOTER
