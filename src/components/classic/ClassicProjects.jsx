@@ -1,26 +1,24 @@
 
 import { projects } from '../../data/projects';
 
+import '../../styles/classic/ClassicProjects.css';
+
 const ClassicProjects = () => {
   return (
     <section
       id="proyectos-cv"
       className="cv-proyectos-section"
     >
-
       <h2 className="cv-section-title">
         Proyectos destacados
       </h2>
 
       <div className="cards cv-project-grid">
-
         {projects.map((project) => (
-
           <article
             className="cardproyectos cv-project-card"
             key={project.name}
           >
-
             {/* TIPO DE PROYECTO */}
 
             <span className="cv-project-type">
@@ -29,26 +27,20 @@ const ClassicProjects = () => {
 
             {/* NOMBRE */}
 
-            <h3>
-              {project.name}
-            </h3>
+            <h3>{project.name}</h3>
 
             {/* DESCRIPCIÓN */}
 
-            <p>
-              {project.description}
-            </p>
+            <p>{project.description}</p>
 
             {/* TECNOLOGÍAS */}
 
             <div className="cv-tech-list">
-
               {project.stack.map((technology) => (
                 <span key={technology}>
                   {technology}
                 </span>
               ))}
-
             </div>
 
             {/* ENLACE */}
@@ -63,13 +55,9 @@ const ClassicProjects = () => {
                 Visitar proyecto
               </a>
             )}
-
           </article>
-
         ))}
-
       </div>
-
     </section>
   );
 };

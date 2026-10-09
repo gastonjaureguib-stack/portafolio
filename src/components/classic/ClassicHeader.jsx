@@ -2,12 +2,13 @@
 import { Link } from 'react-router-dom';
 import { profile } from '../../data/profile';
 
+import '../../styles/classic/ClassicHeader.css';
+
 const ClassicHeader = () => {
   return (
     <header className="portada">
 
       <div className="cv-top-actions">
-
         <Link
           to="/"
           className="cv-volver"
@@ -22,7 +23,6 @@ const ClassicHeader = () => {
         >
           Imprimir / Guardar PDF
         </button>
-
       </div>
 
       <h1 className="tituloh1">
@@ -44,7 +44,6 @@ const ClassicHeader = () => {
       </p>
 
       <div className="botonagil">
-
         <a
           href="#proyectos-cv"
           className="botonproyectos"
@@ -58,7 +57,6 @@ const ClassicHeader = () => {
         >
           Contactarme
         </a>
-
       </div>
 
     </header>

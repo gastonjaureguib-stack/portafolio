@@ -1,0 +1,19 @@
+
+/* =========================================
+   PERFIL PROFESIONAL Y SOBRE MI
+========================================= */
+
+.cv-normal .profesional,
+.cv-normal .sobre-mi {
+  padding: 10px 20px 30px;
+}
+
+.cv-normal .profesional p,
+.cv-normal .sobre-mi p {
+  max-width: 800px;
+  margin: 0 auto 18px;
+  text-align: center;
+  color: #374151;
+  font-size: 1.05rem;
+  line-height: 1.8;
+}

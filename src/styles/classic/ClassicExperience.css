@@ -1,0 +1,121 @@
+
+/* =========================================
+   EXPERIENCIA PROFESIONAL
+========================================= */
+
+.cv-normal .experiencia-titulo {
+  padding: 10px 20px 50px;
+  text-align: center;
+}
+
+.cv-normal .experiencia {
+  position: relative;
+  overflow: hidden;
+  max-width: 1100px;
+  margin: 30px auto 0;
+  padding: 38px 30px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.82);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+  transition: 0.3s ease;
+}
+
+.cv-normal .experiencia::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(
+    90deg,
+    #278cba,
+    #22c55e
+  );
+}
+
+.cv-normal .experiencia:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.09);
+}
+
+.cv-normal .experiencia h3 {
+  margin-bottom: 10px;
+  color: #111827;
+  font-size: 1.4rem;
+  text-decoration: underline;
+}
+
+.cv-normal .experiencia p {
+  max-width: 750px;
+  margin: 0 auto 15px;
+  color: #4b5563;
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.cv-periodo {
+  font-size: 0.85rem !important;
+  font-weight: 600;
+  color: #0e7871 !important;
+}
+
+/* =========================================
+   HERRAMIENTAS UTILIZADAS
+========================================= */
+
+.cv-experience-tools {
+  max-width: 750px;
+  margin: 25px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.cv-normal .herramientas-logos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.cv-normal .herramientas-logos img {
+  width: 52px;
+  height: 52px;
+  object-fit: contain;
+}
+
+/* =========================================
+   REFERENCIAS LABORALES
+========================================= */
+
+.cv-normal .contactoreferencia {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+.cv-normal .referencialaboral {
+  color: #4b5563;
+  font-size: 0.78rem;
+}
+
+.cv-normal .boton-referencia {
+  padding: 5px 11px;
+  border-radius: 6px;
+  background: #179e71;
+  color: white;
+  text-decoration: none;
+  font-size: 0.75rem;
+  transition: 0.2s ease;
+}
+
+.cv-normal .boton-referencia:hover {
+  background: #4f46e5;
+}

@@ -1,6 +1,6 @@
 
 import { profile } from '../../data/profile';
-import '../../styles/global/Footer.css';
+import '../../styles/dev/Footer.css';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();

@@ -2,6 +2,8 @@
 import { jobs } from '../../data/experience';
 import { skillGroups } from '../../data/skills';
 
+import '../../styles/classic/ClassicExperience.css';
+
 const ClassicExperience = () => {
 
   // Reutilizamos los logos de skills.js
@@ -20,12 +22,9 @@ const ClassicExperience = () => {
   return (
     <section className="experiencia-titulo">
 
-      <h2>
-        Experiencia Profesional
-      </h2>
+      <h2>Experiencia Profesional</h2>
 
       {jobs.map((job) => (
-
         <div
           className="experiencia"
           key={job.company}
@@ -33,13 +32,9 @@ const ClassicExperience = () => {
 
           {/* EMPRESA Y CARGO */}
 
-          <h3>
-            {job.company}
-          </h3>
+          <h3>{job.company}</h3>
 
-          <p>
-            {job.role}
-          </p>
+          <p>{job.role}</p>
 
           {/* PERÍODO */}
 
@@ -66,7 +61,6 @@ const ClassicExperience = () => {
           {/* HERRAMIENTAS UTILIZADAS */}
 
           {job.tools?.length > 0 && (
-
             <div className="cv-experience-tools">
 
               <strong>
@@ -74,9 +68,7 @@ const ClassicExperience = () => {
               </strong>
 
               <div className="herramientas-logos">
-
                 {job.tools.map((toolName) => {
-
                   const logo = getToolLogo(toolName);
 
                   return logo ? (
@@ -86,19 +78,15 @@ const ClassicExperience = () => {
                       alt={toolName}
                     />
                   ) : null;
-
                 })}
-
               </div>
 
             </div>
-
           )}
 
           {/* REFERENCIA LABORAL */}
 
           {job.reference && (
-
             <div className="contactoreferencia">
 
               <span className="referencialaboral">
@@ -121,11 +109,9 @@ const ClassicExperience = () => {
               )}
 
             </div>
-
           )}
 
         </div>
-
       ))}
 
     </section>

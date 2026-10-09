@@ -1,5 +1,6 @@
 
 import { profile } from '../../data/profile';
+import '../../styles/classic/ClassicContact.css';
 
 const ClassicContact = () => {
   const { contact } = profile;
@@ -9,17 +10,11 @@ const ClassicContact = () => {
       id="contacto-cv"
       className="contacto"
     >
+      <h2>Contacto</h2>
 
-      <h2>
-        Contacto
-      </h2>
-
-      <p>
-        {contact.message}
-      </p>
+      <p>{contact.message}</p>
 
       <div className="cardinfo">
-
         <p>
           <strong>📞 Teléfono:</strong>{' '}
           {contact.phone}
@@ -36,7 +31,6 @@ const ClassicContact = () => {
         </p>
 
         <div className="botones-contacto">
-
           <a
             href={`https://wa.me/${contact.whatsapp}`}
             target="_blank"
@@ -61,11 +55,8 @@ const ClassicContact = () => {
           >
             LinkedIn
           </a>
-
         </div>
-
       </div>
-
     </section>
   );
 };

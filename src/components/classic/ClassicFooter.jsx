@@ -2,14 +2,14 @@
 import { Link } from 'react-router-dom';
 import { profile } from '../../data/profile';
 
+import '../../styles/classic/ClassicFooter.css';
+
 const ClassicFooter = () => {
   const currentYear = new Date().getFullYear();
 
   return (
     <footer>
-
       <div className="footer-links">
-
         <Link to="/">
           Portfolio creativo
         </Link>
@@ -21,14 +21,12 @@ const ClassicFooter = () => {
         <a href="#contacto-cv">
           Contacto
         </a>
-
       </div>
 
       <p>
         © {currentYear} - {profile.name} |
         {' '}Desarrollo Web & Estrategia Digital
       </p>
-
     </footer>
   );
 };

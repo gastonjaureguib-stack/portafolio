@@ -1,11 +1,9 @@
 
 import { Routes, Route } from 'react-router-dom';
 
-// Componentes compartidos
-import Navbar from './components/shared/Navbar';
-import Footer from './components/shared/Footer';
-
 // Componentes del portfolio developer
+import Navbar from './components/dev/Navbar';
+import Footer from './components/dev/Footer';
 import Hero from './components/dev/Hero';
 import About from './components/dev/About';
 import Skills from './components/dev/Skills';
@@ -17,7 +15,7 @@ import Contact from './components/dev/Contact';
 // Página del CV clásico
 import VersionClasica from './pages/VersionClasica';
 
-// Portfolio principal
+// Portfolio developer
 const Portfolio = () => {
   return (
     <>
