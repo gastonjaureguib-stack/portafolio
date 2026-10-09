@@ -1,79 +1,44 @@
-import { useState } from 'react';
-import './Education.css';
 
+import { useState, useEffect } from 'react';
 
-// =========================================================
-// FORMACIÓN CODERHOUSE
-// =========================================================
+import {
+  coderEducation,
+  otherEducation,
+} from '../../data/education';
 
-const coderEducation = [
-  {
-    title: 'Desarrollo Web',
-    institution: 'Coderhouse',
-    diploma: '/diplomadesarrollo.jpg',
-  },
-  {
-    title: 'JavaScript',
-    institution: 'Coderhouse',
-    diploma: '/diplomajavascript.png',
-  },
-  {
-    title: 'React JS',
-    institution: 'Coderhouse',
-    diploma: '/diplomareact.png',
-  },
-  {
-    title: 'Backend',
-    institution: 'Coderhouse',
-    diploma: '/diplomabackend1.png',
-  },
-];
-
-
-// =========================================================
-// OTRA FORMACIÓN
-// =========================================================
-
-const otherEducation = [
-  {
-    title: 'Analista en Comunicación y Marketing',
-    institution: 'Universidad ORT',
-  },
-  {
-    title: 'Técnico en Relaciones Públicas y Organización de Eventos',
-    institution: 'Universidad ORT',
-  },
-  {
-    title: 'Inglés',
-    level: 'First Certificate',
-    institution: 'Dickens',
-  },
-];
-
-
-// =========================================================
-// COMPONENTE
-// =========================================================
+import '../../styles/dev/Education.css';
 
 const Education = () => {
   const [selectedDiploma, setSelectedDiploma] = useState(null);
+
+  useEffect(() => {
+    if (!selectedDiploma) return;
+
+    const handleEscape = (event) => {
+      if (event.key === 'Escape') {
+        setSelectedDiploma(null);
+      }
+    };
+
+    window.addEventListener('keydown', handleEscape);
+
+    return () => {
+      window.removeEventListener('keydown', handleEscape);
+    };
+  }, [selectedDiploma]);
 
   return (
     <>
       <section id="formacion" className="section">
 
-        {/* =====================================================
-            TÍTULO
-        ===================================================== */}
+        {/* TÍTULO */}
 
         <div className="section-heading">
-
           <span className="section-comment">
             // formación y certificaciones
           </span>
 
           <h2 className="section-title">
-
             <span className="keyword">
               const
             </span>{' '}
@@ -83,20 +48,14 @@ const Education = () => {
             </span>
 
             {' = []'}
-
           </h2>
-
         </div>
 
-
-        {/* =====================================================
-            CODERHOUSE
-        ===================================================== */}
+        {/* FORMACIÓN CODERHOUSE */}
 
         <div className="education-block">
 
           <div className="education-code-title">
-
             <span className="keyword">
               const
             </span>{' '}
@@ -106,11 +65,7 @@ const Education = () => {
             </span>
 
             {' = ['}
-
           </div>
-
-
-          {/* DIPLOMAS */}
 
           <div className="diplomas-grid">
 
@@ -121,13 +76,23 @@ const Education = () => {
                 key={education.title}
               >
 
-                {/* IMAGEN */}
+                {/* IMAGEN DEL DIPLOMA */}
 
                 <div
                   className="diploma-image-container"
-                  onClick={() =>
-                    setSelectedDiploma(education)
-                  }
+                  onClick={() => setSelectedDiploma(education)}
+                  role="button"
+                  tabIndex={0}
+                  aria-label={`Ver diploma de ${education.title}`}
+                  onKeyDown={(event) => {
+                    if (
+                      event.key === 'Enter' ||
+                      event.key === ' '
+                    ) {
+                      event.preventDefault();
+                      setSelectedDiploma(education);
+                    }
+                  }}
                 >
 
                   <img
@@ -144,13 +109,11 @@ const Education = () => {
 
                 </div>
 
-
                 {/* INFORMACIÓN */}
 
                 <div className="diploma-info">
 
                   <p>
-
                     <span className="property">
                       course
                     </span>
@@ -160,12 +123,9 @@ const Education = () => {
                     <span className="string">
                       "{education.title}"
                     </span>
-
                   </p>
 
-
                   <p>
-
                     <span className="property">
                       institution
                     </span>
@@ -175,12 +135,9 @@ const Education = () => {
                     <span className="string">
                       "{education.institution}"
                     </span>
-
                   </p>
 
-
                   <p>
-
                     <span className="property">
                       certified
                     </span>
@@ -188,9 +145,8 @@ const Education = () => {
                     :{' '}
 
                     <span className="boolean">
-                      true
+                      {String(education.certified)}
                     </span>
-
                   </p>
 
                 </div>
@@ -201,22 +157,17 @@ const Education = () => {
 
           </div>
 
-
           <div className="education-code-close">
             ];
           </div>
 
         </div>
 
-
-        {/* =====================================================
-            OTRA FORMACIÓN
-        ===================================================== */}
+        {/* OTRA FORMACIÓN */}
 
         <div className="education-block other-education">
 
           <div className="education-code-title">
-
             <span className="keyword">
               const
             </span>{' '}
@@ -226,9 +177,7 @@ const Education = () => {
             </span>
 
             {' = ['}
-
           </div>
-
 
           <div className="other-education-list">
 
@@ -239,14 +188,9 @@ const Education = () => {
                 key={education.title}
               >
 
-                {/* ABRIR OBJETO */}
-
                 <span>
                   {'{ '}
                 </span>
-
-
-                {/* COURSE */}
 
                 <span className="property">
                   course
@@ -260,12 +204,10 @@ const Education = () => {
                   "{education.title}"
                 </span>
 
-
-                {/* LEVEL - SOLO SI EXISTE */}
+                {/* NIVEL OPCIONAL */}
 
                 {education.level && (
                   <>
-
                     <span>
                       ,{' '}
                     </span>
@@ -281,12 +223,8 @@ const Education = () => {
                     <span className="string">
                       "{education.level}"
                     </span>
-
                   </>
                 )}
-
-
-                {/* INSTITUTION */}
 
                 <span>
                   ,{' '}
@@ -304,9 +242,6 @@ const Education = () => {
                   "{education.institution}"
                 </span>
 
-
-                {/* CERRAR OBJETO */}
-
                 <span>
                   {' },'}
                 </span>
@@ -317,7 +252,6 @@ const Education = () => {
 
           </div>
 
-
           <div className="education-code-close">
             ];
           </div>
@@ -326,43 +260,32 @@ const Education = () => {
 
       </section>
 
-
-      {/* =========================================================
-          MODAL DIPLOMA
-      ========================================================= */}
+      {/* MODAL DEL DIPLOMA */}
 
       {selectedDiploma && (
 
         <div
           className="diploma-modal"
-          onClick={() =>
-            setSelectedDiploma(null)
-          }
+          onClick={() => setSelectedDiploma(null)}
+          role="presentation"
         >
 
-          {/* CERRAR */}
-
           <button
+            type="button"
             className="diploma-modal-close"
-            onClick={() =>
-              setSelectedDiploma(null)
-            }
+            onClick={() => setSelectedDiploma(null)}
             aria-label="Cerrar diploma"
           >
             ×
           </button>
 
-
-          {/* CONTENIDO */}
-
           <div
             className="diploma-modal-content"
-            onClick={(e) =>
-              e.stopPropagation()
-            }
+            role="dialog"
+            aria-modal="true"
+            aria-label={`Diploma ${selectedDiploma.title}`}
+            onClick={(event) => event.stopPropagation()}
           >
-
-            {/* HEADER */}
 
             <div className="diploma-modal-header">
 
@@ -371,7 +294,6 @@ const Education = () => {
               </span>
 
               <p>
-
                 <span className="keyword">
                   const
                 </span>{' '}
@@ -387,13 +309,9 @@ const Education = () => {
                 </span>
 
                 ;
-
               </p>
 
             </div>
-
-
-            {/* DIPLOMA GRANDE */}
 
             <img
               src={selectedDiploma.diploma}

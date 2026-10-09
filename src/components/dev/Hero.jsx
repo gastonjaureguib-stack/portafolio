@@ -1,5 +1,7 @@
+
 import { Link } from 'react-router-dom';
-import './Hero.css';
+import { profile } from '../../data/profile';
+import '../../styles/dev/Hero.css';
 
 const Hero = () => {
   return (
@@ -27,9 +29,9 @@ const Hero = () => {
           </p>
 
           <h1>
-            Gastón
+            {profile.firstName}
             <br />
-            Jaureguiberry
+            {profile.lastName}
           </h1>
 
           <div className="hero-object">
@@ -54,7 +56,7 @@ const Hero = () => {
               :{' '}
 
               <span className="string">
-                "Estudiante avanzado Full Stack developer"
+                "{profile.headline}"
               </span>
               ,
             </p>
@@ -67,7 +69,7 @@ const Hero = () => {
               :{' '}
 
               <span className="string">
-                "Uruguay"
+                "{profile.location}"
               </span>
               ,
             </p>
@@ -80,7 +82,7 @@ const Hero = () => {
               :{' '}
 
               <span className="boolean">
-                true
+                {String(profile.creative)}
               </span>
               ,
             </p>
@@ -93,7 +95,7 @@ const Hero = () => {
               :{' '}
 
               <span className="boolean">
-                true
+                {String(profile.available)}
               </span>
             </p>
 
@@ -104,8 +106,7 @@ const Hero = () => {
           </div>
 
           <p className="hero-description">
-            Desarrollo soluciones digitales combinando código,
-            diseño y visión de negocio.
+            {profile.description}
           </p>
 
           <div className="hero-buttons">

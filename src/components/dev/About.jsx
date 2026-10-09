@@ -1,3 +1,6 @@
+
+import { profile } from '../../data/profile';
+
 const About = () => {
   return (
     <section id="sobre-mi" className="section">
@@ -35,7 +38,7 @@ const About = () => {
           <p className="code-line indent">
             <span className="property">profile</span>:{' '}
             <span className="string">
-              "Desarrollador web"
+              "{profile.role}"
             </span>,
           </p>
 
@@ -43,17 +46,14 @@ const About = () => {
             <span className="property">background</span>: [
           </p>
 
-          <p className="code-line indent-2 string">
-            "Marketing",
-          </p>
-
-          <p className="code-line indent-2 string">
-            "Comunicación",
-          </p>
-
-          <p className="code-line indent-2 string">
-            "Diseño"
-          </p>
+          {profile.background.map((item, index) => (
+            <p
+              className="code-line indent-2 string"
+              key={item}
+            >
+              "{item}"{index < profile.background.length - 1 ? ',' : ''}
+            </p>
+          ))}
 
           <p className="code-line indent">
             ],
@@ -62,14 +62,14 @@ const About = () => {
           <p className="code-line indent">
             <span className="property">mindset</span>:{' '}
             <span className="string">
-              "Aprendizaje constante y mejora continua"
+              "{profile.mindset}"
             </span>,
           </p>
 
           <p className="code-line indent">
             <span className="property">goal</span>:{' '}
             <span className="string">
-              "Crear soluciones simples, funcionales y útiles"
+              "{profile.goal}"
             </span>
           </p>
 
