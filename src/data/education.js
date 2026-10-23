@@ -34,6 +34,12 @@ export const coderEducation = [
 
 export const otherEducation = [
   {
+    title: 'Introducción a Python',
+    institution: 'Santander Open Academy',
+    diploma: '/diplomapython.png',
+    certified: true,
+  },
+  {
     title: 'Analista en Comunicación y Marketing',
     institution: 'Universidad ORT',
   },

@@ -11,6 +11,14 @@ import '../../styles/dev/Education.css';
 const Education = () => {
   const [selectedDiploma, setSelectedDiploma] = useState(null);
 
+  const certifiedEducation = otherEducation.filter(
+    (education) => education.certified && education.diploma
+  );
+
+  const additionalEducation = otherEducation.filter(
+    (education) => !education.certified || !education.diploma
+  );
+
   useEffect(() => {
     if (!selectedDiploma) return;
 
@@ -27,10 +35,66 @@ const Education = () => {
     };
   }, [selectedDiploma]);
 
+  const renderDiplomaCard = (education) => (
+    <article
+      className="diploma-card"
+      key={`${education.institution}-${education.title}`}
+    >
+      <div
+        className="diploma-image-container"
+        onClick={() => setSelectedDiploma(education)}
+        role="button"
+        tabIndex={0}
+        aria-label={`Ver diploma de ${education.title}`}
+        onKeyDown={(event) => {
+          if (event.key === 'Enter' || event.key === ' ') {
+            event.preventDefault();
+            setSelectedDiploma(education);
+          }
+        }}
+      >
+        <img
+          src={education.diploma}
+          alt={`Diploma ${education.title}`}
+          className="diploma-image"
+        />
+
+        <div className="diploma-overlay">
+          <span>verDiploma()</span>
+        </div>
+      </div>
+
+      <div className="diploma-info">
+        <p>
+          <span className="property">course</span>
+          :{' '}
+          <span className="string">
+            "{education.title}"
+          </span>
+        </p>
+
+        <p>
+          <span className="property">institution</span>
+          :{' '}
+          <span className="string">
+            "{education.institution}"
+          </span>
+        </p>
+
+        <p>
+          <span className="property">certified</span>
+          :{' '}
+          <span className="boolean">
+            {String(education.certified)}
+          </span>
+        </p>
+      </div>
+    </article>
+  );
+
   return (
     <>
       <section id="formacion" className="section">
-
         {/* TÍTULO */}
 
         <div className="section-heading">
@@ -39,14 +103,8 @@ const Education = () => {
           </span>
 
           <h2 className="section-title">
-            <span className="keyword">
-              const
-            </span>{' '}
-
-            <span className="variable">
-              education
-            </span>
-
+            <span className="keyword">const</span>{' '}
+            <span className="variable">education</span>
             {' = []'}
           </h2>
         </div>
@@ -54,171 +112,79 @@ const Education = () => {
         {/* FORMACIÓN CODERHOUSE */}
 
         <div className="education-block">
-
           <div className="education-code-title">
-            <span className="keyword">
-              const
-            </span>{' '}
-
-            <span className="variable">
-              coderhouse
-            </span>
-
+            <span className="keyword">const</span>{' '}
+            <span className="variable">coderhouse</span>
             {' = ['}
           </div>
 
           <div className="diplomas-grid">
-
-            {coderEducation.map((education) => (
-
-              <article
-                className="diploma-card"
-                key={education.title}
-              >
-
-                {/* IMAGEN DEL DIPLOMA */}
-
-                <div
-                  className="diploma-image-container"
-                  onClick={() => setSelectedDiploma(education)}
-                  role="button"
-                  tabIndex={0}
-                  aria-label={`Ver diploma de ${education.title}`}
-                  onKeyDown={(event) => {
-                    if (
-                      event.key === 'Enter' ||
-                      event.key === ' '
-                    ) {
-                      event.preventDefault();
-                      setSelectedDiploma(education);
-                    }
-                  }}
-                >
-
-                  <img
-                    src={education.diploma}
-                    alt={`Diploma ${education.title}`}
-                    className="diploma-image"
-                  />
-
-                  <div className="diploma-overlay">
-                    <span>
-                      verDiploma()
-                    </span>
-                  </div>
-
-                </div>
-
-                {/* INFORMACIÓN */}
-
-                <div className="diploma-info">
-
-                  <p>
-                    <span className="property">
-                      course
-                    </span>
-
-                    :{' '}
-
-                    <span className="string">
-                      "{education.title}"
-                    </span>
-                  </p>
-
-                  <p>
-                    <span className="property">
-                      institution
-                    </span>
-
-                    :{' '}
-
-                    <span className="string">
-                      "{education.institution}"
-                    </span>
-                  </p>
-
-                  <p>
-                    <span className="property">
-                      certified
-                    </span>
-
-                    :{' '}
-
-                    <span className="boolean">
-                      {String(education.certified)}
-                    </span>
-                  </p>
-
-                </div>
-
-              </article>
-
-            ))}
-
+            {coderEducation.map(renderDiplomaCard)}
           </div>
 
           <div className="education-code-close">
             ];
           </div>
-
         </div>
+
+        {/* CERTIFICACIONES DE OTRAS INSTITUCIONES */}
+
+        {certifiedEducation.length > 0 && (
+          <div className="education-block">
+            <div className="education-code-title">
+              <span className="keyword">const</span>{' '}
+              <span className="variable">
+                otherCertifications
+              </span>
+              {' = ['}
+            </div>
+
+            <div className="diplomas-grid">
+              {certifiedEducation.map(renderDiplomaCard)}
+            </div>
+
+            <div className="education-code-close">
+              ];
+            </div>
+          </div>
+        )}
 
         {/* OTRA FORMACIÓN */}
 
         <div className="education-block other-education">
-
           <div className="education-code-title">
-            <span className="keyword">
-              const
-            </span>{' '}
-
-            <span className="variable">
-              otherEducation
-            </span>
-
+            <span className="keyword">const</span>{' '}
+            <span className="variable">otherEducation</span>
             {' = ['}
           </div>
 
           <div className="other-education-list">
-
-            {otherEducation.map((education) => (
-
+            {additionalEducation.map((education) => (
               <div
                 className="other-education-item"
-                key={education.title}
+                key={`${education.institution}-${education.title}`}
               >
-
-                <span>
-                  {'{ '}
-                </span>
+                <span>{'{ '}</span>
 
                 <span className="property">
                   course
                 </span>
 
-                <span>
-                  :{' '}
-                </span>
+                <span>: </span>
 
                 <span className="string">
                   "{education.title}"
                 </span>
 
-                {/* NIVEL OPCIONAL */}
-
                 {education.level && (
                   <>
-                    <span>
-                      ,{' '}
-                    </span>
+                    <span>, </span>
 
                     <span className="property">
                       level
                     </span>
 
-                    <span>
-                      :{' '}
-                    </span>
+                    <span>: </span>
 
                     <span className="string">
                       "{education.level}"
@@ -226,50 +192,37 @@ const Education = () => {
                   </>
                 )}
 
-                <span>
-                  ,{' '}
-                </span>
+                <span>, </span>
 
                 <span className="property">
                   institution
                 </span>
 
-                <span>
-                  :{' '}
-                </span>
+                <span>: </span>
 
                 <span className="string">
                   "{education.institution}"
                 </span>
 
-                <span>
-                  {' },'}
-                </span>
-
+                <span>{' },'}</span>
               </div>
-
             ))}
-
           </div>
 
           <div className="education-code-close">
             ];
           </div>
-
         </div>
-
       </section>
 
       {/* MODAL DEL DIPLOMA */}
 
       {selectedDiploma && (
-
         <div
           className="diploma-modal"
           onClick={() => setSelectedDiploma(null)}
           role="presentation"
         >
-
           <button
             type="button"
             className="diploma-modal-close"
@@ -286,31 +239,22 @@ const Education = () => {
             aria-label={`Diploma ${selectedDiploma.title}`}
             onClick={(event) => event.stopPropagation()}
           >
-
             <div className="diploma-modal-header">
-
               <span className="comment">
                 // {selectedDiploma.institution}
               </span>
 
               <p>
-                <span className="keyword">
-                  const
-                </span>{' '}
-
+                <span className="keyword">const</span>{' '}
                 <span className="variable">
                   certificate
                 </span>
-
                 {' = '}
-
                 <span className="string">
                   "{selectedDiploma.title}"
                 </span>
-
                 ;
               </p>
-
             </div>
 
             <img
@@ -318,13 +262,9 @@ const Education = () => {
               alt={`Diploma ${selectedDiploma.title}`}
               className="diploma-modal-image"
             />
-
           </div>
-
         </div>
-
       )}
-
     </>
   );
 };

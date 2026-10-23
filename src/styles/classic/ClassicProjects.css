@@ -4,39 +4,65 @@
 ========================================= */
 
 .cv-proyectos-section {
-  padding: 10px 20px 50px;
+  padding: 20px 20px 60px;
 }
 
-.cv-normal .cards {
-  width: min(1100px, 100%);
-  margin: auto;
+/* =========================================
+   GRID DE PROYECTOS
+========================================= */
+
+.cv-normal .cv-project-grid {
+  width: min(1200px, 100%);
+  margin: 0 auto;
+
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 25px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+
+  align-items: stretch;
 }
 
-.cv-normal .cardproyectos {
+/* =========================================
+   TARJETAS
+========================================= */
+
+.cv-normal .cv-project-card {
   position: relative;
   overflow: hidden;
+
   display: flex;
   flex-direction: column;
+
+  min-width: 0;
   padding: 28px;
+
   border-radius: 22px;
-  background: rgba(255, 255, 255, 0.82);
-  border: 1px solid rgba(255, 255, 255, 0.6);
+
+  background: rgba(255, 255, 255, 0.88);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+
   box-shadow:
     0 10px 25px rgba(0, 0, 0, 0.06),
     0 2px 10px rgba(0, 0, 0, 0.03);
-  transition: 0.3s ease;
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
 }
 
-.cv-normal .cardproyectos::before {
+/* Línea superior */
+
+.cv-normal .cv-project-card::before {
   content: '';
+
   position: absolute;
   top: 0;
   left: 0;
+
   width: 100%;
   height: 4px;
+
   background: linear-gradient(
     90deg,
     #278cba,
@@ -44,34 +70,110 @@
   );
 }
 
-.cv-normal .cardproyectos:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.12);
-}
+/* Hover */
 
-.cv-normal .cardproyectos h3 {
-  margin: 10px 0 12px;
-  font-size: 1.6rem;
-  color: #111827;
-}
+@media (hover: hover) {
+  .cv-normal .cv-project-card:hover {
+    transform: translateY(-6px);
 
-.cv-normal .cardproyectos p {
-  margin-bottom: 14px;
-  color: #4b5563;
-  line-height: 1.7;
-  font-size: 0.95rem;
+    border-color: rgba(14, 120, 113, 0.2);
+
+    box-shadow:
+      0 22px 45px rgba(0, 0, 0, 0.1);
+  }
 }
 
 /* =========================================
-   TIPO DE PROYECTO
+   ENCABEZADO
 ========================================= */
+
+.cv-project-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+/* Tipo */
 
 .cv-project-type {
   color: #0e7871;
+
   font-size: 0.75rem;
   font-weight: 700;
+
   text-transform: uppercase;
   letter-spacing: 0.08em;
+}
+
+/* =========================================
+   ESTADO DEL PROYECTO
+========================================= */
+
+.cv-project-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+
+  padding: 6px 11px;
+
+  border-radius: 50px;
+
+  font-size: 0.7rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+/* Indicador circular */
+
+.cv-project-status::before {
+  content: '';
+
+  width: 7px;
+  height: 7px;
+
+  border-radius: 50%;
+  background: currentColor;
+}
+
+/* Publicado */
+
+.cv-project-status--online {
+  color: #15803d;
+  background: #dcfce7;
+}
+
+/* En desarrollo */
+
+.cv-project-status--building {
+  color: #a16207;
+  background: #fef3c7;
+}
+
+/* =========================================
+   NOMBRE Y DESCRIPCION
+========================================= */
+
+.cv-normal .cv-project-card h3 {
+  margin: 0 0 14px;
+
+  font-size: 1.45rem;
+  font-weight: 750;
+  line-height: 1.3;
+
+  color: #111827;
+}
+
+.cv-normal .cv-project-card p {
+  margin: 0 0 20px;
+
+  color: #4b5563;
+
+  line-height: 1.7;
+  font-size: 0.92rem;
 }
 
 /* =========================================
@@ -81,42 +183,124 @@
 .cv-tech-list {
   display: flex;
   flex-wrap: wrap;
-  gap: 7px;
-  margin: 8px 0 20px;
+  align-content: flex-start;
+
+  gap: 8px;
+  margin: 0 0 24px;
 }
 
 .cv-tech-list span {
-  padding: 5px 9px;
-  border-radius: 20px;
+  display: inline-flex;
+  align-items: center;
+
+  padding: 6px 11px;
+
+  border-radius: 50px;
+
   background: #edf7f5;
+  border: 1px solid rgba(14, 120, 113, 0.08);
+
   color: #0e7871;
+
   font-size: 0.72rem;
   font-weight: 600;
 }
 
 /* =========================================
-   BOTON VER PROYECTO
+   BOTON VISITAR PROYECTO
 ========================================= */
 
 .cv-normal .boton-proyectos {
-  margin-top: auto;
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
   align-self: flex-start;
-  padding: 10px 22px;
+  margin-top: auto;
+
+  padding: 11px 22px;
+
   border-radius: 50px;
+
   background: linear-gradient(
     135deg,
     #0e7871,
     #199098
   );
-  color: white;
+
+  color: #ffffff;
   text-decoration: none;
+
   font-size: 0.85rem;
-  font-weight: 600;
-  transition: 0.3s ease;
+  font-weight: 650;
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
 }
 
 .cv-normal .boton-proyectos:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 18px rgba(14, 120, 113, 0.28);
+
+  box-shadow:
+    0 8px 18px rgba(14, 120, 113, 0.28);
+}
+
+.cv-normal .boton-proyectos:focus-visible {
+  outline: 3px solid #278cba;
+  outline-offset: 4px;
+}
+
+/* =========================================
+   RESPONSIVE - TABLETS
+========================================= */
+
+@media (max-width: 1050px) {
+  .cv-normal .cv-project-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* =========================================
+   RESPONSIVE - CELULARES
+========================================= */
+
+@media (max-width: 680px) {
+  .cv-proyectos-section {
+    padding: 15px 16px 45px;
+  }
+
+  .cv-normal .cv-project-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .cv-normal .cv-project-card {
+    padding: 24px;
+    border-radius: 18px;
+  }
+
+  .cv-normal .cv-project-card h3 {
+    font-size: 1.35rem;
+  }
+
+  .cv-project-header {
+    margin-bottom: 15px;
+  }
+}
+
+/* =========================================
+   ACCESIBILIDAD
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .cv-normal .cv-project-card,
+  .cv-normal .boton-proyectos {
+    transition: none;
+  }
+
+  .cv-normal .cv-project-card:hover,
+  .cv-normal .boton-proyectos:hover {
+    transform: none;
+  }
 }
